@@ -14,5 +14,15 @@
 
 .highlight{
 	background-color: blue;
-	
+
+}
+
+#button{
+	width: 900px;
+	margin: 0 auto;
+}
+
+button{
+	display: block;
+	margin: auto;
 }
