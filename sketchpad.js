@@ -1,10 +1,28 @@
 
-var input = 64;
+var input = 3;
 
 
 $(document).ready(function(){
 
+	makeGrid(input);
+
+
+});
+
+function toClear(){
+	$('.wrapper').find('div').removeClass('highlight');
+}
+
+function newGrid(){
+
+	input = prompt("How many grids per line do you wish to set?");
+	deleteGrid();
+	makeGrid(input);
 	
+}
+
+function makeGrid(input){
+
 	for(var i = 0; i<input*input;i++){
 		$('.wrapper').append("<div></div>");
 	}
@@ -20,15 +38,8 @@ $(document).ready(function(){
 		$(this).addClass('highlight');
 
 	});
-
-});
-
-function toClear(){
-	$('.wrapper').find('div').removeClass('highlight');
 }
 
-/*	function newGrid(){
-
-		 input = prompt("How many grids per line do you wish to set?");
-
-		}*/
+function deleteGrid(){
+$('.wrapper').find('div').remove();
+}
