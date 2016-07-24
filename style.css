@@ -2,6 +2,7 @@
 	width: 900px;
 	height: 900px;
 	margin: 0 auto;
+	 box-shadow:3px 3px 5px 6px #ccc;
 
 }
 
@@ -10,6 +11,7 @@
 	border: 1px solid black;
 	display: inline-block;
 	margin: 1px 1px;
+	background-color: grey;
 	
 }
 
@@ -24,11 +26,22 @@
 }
 
 button{
+
+	width: 129px;
+    height: 37px;
 	display: inline-block;
-	margin: auto;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	margin-top: 50px;
 }
 
+#toClear{
+	position: relative;
+	left: 300px;
+}
+#newGrid{
+	position: relative;
+	left: 300px;
+}
 body{
-	background-color: grey;
+	background-image: url("backgroundImg.jpg");
 }
