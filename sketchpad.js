@@ -63,6 +63,16 @@ function makeGridWithRandomColor(){
 }
 }
 
+function MakeGridWithOpacity(){
+
+	input = getInput();
+	if(input>0&&input<=100){
+	deleteGrid();
+	makeGrid(input);
+	GridWithOpacity();
+}
+}
+
 function makeGrid(input){
 
 	for(var i = 0; i<input*input;i++){
@@ -90,6 +100,49 @@ function GridBlueColor(){
 	$('.wrapper').find('div').on('mouseenter',function(){
 		$(this).css('background-color','blue');
 
+	});
+
+}
+
+function GridWithOpacity(){
+
+	$('.wrapper').find('div').on('mouseenter',function(){
+		
+		var currentOpacity = $(this).css('opacity');
+		currentOpacity=Number(currentOpacity);
+		
+		
+		if($(this).css("background-color")==="rgb(255,255,255)"){
+
+			$(this).css('background-color','rgb(0,0,0)');
+			$(this).css('opacity',0.1);
+			
+
+		}
+
+		else{
+			currentOpacity+=0.1;
+			
+			$(this).css('opacity',currentOpacity);
+			
+
+		}
+		/*$(this).css('background-color','black');
+		$(this).css('opacity',0.1);
+
+		var currentOpacity = $(this).css('opacity');
+
+
+		if(0<currentOpacity){
+
+			$(this).css('opacity',currentOpacity+0.1);
+		}
+
+		else{
+
+
+		
+	}*/
 	});
 
 }
