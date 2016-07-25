@@ -3,11 +3,8 @@ var input = 16;
 
 
 $(document).ready(function(){
-
 	makeGrid(input);
 	GridBlueColor();
-
-
 });
 
 function toClear(){
@@ -16,7 +13,11 @@ function toClear(){
 
 function makeGridWithBlue(){
 
-	input = prompt("How many grids per line do you wish to set?(:blue color)");
+	input = prompt("How many grids per line do you wish to set?(Please input 1-100 :blue color)");
+	if(input<=0||input>100){
+		alert("I told you not to excess the range of 1-100! You don't want to crush your broswer, do you?");
+	input =16;
+					}
 	deleteGrid();
 	makeGrid(input);
 	GridBlueColor();
@@ -24,7 +25,11 @@ function makeGridWithBlue(){
 
 function makeGridWithRandomColor(){
 
-	input = prompt("How many grids per line do you wish to set?(:Random color)");
+	input = prompt("How many grids per line do you wish to set?(Please input 1-100 :Random color)");
+		if(input<=0||input>100){
+		alert("I told you not to excess the range of 1-100! You don't want to crush your broswer, do you?");
+	input =16;
+					}
 	deleteGrid();
 	makeGrid(input);
 	GridrandomColor();
@@ -61,13 +66,11 @@ function GridBlueColor(){
 
 }
 
-
 function GridrandomColor(){
 
 		$('.wrapper').find('div').on('mouseenter',function(){
 		var randomColor = Math.floor(Math.random()*16777215).toString(16);
 		$(this).css('background-color',randomColor);
-
 
 	});
 
