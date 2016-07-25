@@ -1,24 +1,33 @@
 
-var input = 3;
+var input = 16;
 
 
 $(document).ready(function(){
 
 	makeGrid(input);
+	GridBlueColor();
 
 
 });
 
 function toClear(){
-	$('.wrapper').find('div').removeClass('highlight');
+	$('.wrapper').find('div').css('background-color','white');
 }
 
-function newGrid(){
+function makeGridWithBlue(){
 
-	input = prompt("How many grids per line do you wish to set?");
+	input = prompt("How many grids per line do you wish to set?(:blue color)");
 	deleteGrid();
 	makeGrid(input);
-	
+	GridBlueColor();
+}
+
+function makeGridWithRandomColor(){
+
+	input = prompt("How many grids per line do you wish to set?(:Random color)");
+	deleteGrid();
+	makeGrid(input);
+	GridrandomColor();
 }
 
 function makeGrid(input){
@@ -34,12 +43,32 @@ function makeGrid(input){
 	$('.wrapper').width(900+input*4);
 	$('.wrapper').height(900+input*4);
 	grid.addClass('gridStyle');
-	grid.on('mouseenter',function(){
-		$(this).addClass('highlight');
 
-	});
+
 }
 
 function deleteGrid(){
 $('.wrapper').find('div').remove();
+}
+
+
+function GridBlueColor(){
+
+		$('.wrapper').find('div').on('mouseenter',function(){
+		$(this).css('background-color','blue');
+
+	});
+
+}
+
+
+function GridrandomColor(){
+
+		$('.wrapper').find('div').on('mouseenter',function(){
+		var randomColor = Math.floor(Math.random()*16777215).toString(16);
+		$(this).css('background-color',randomColor);
+
+
+	});
+
 }

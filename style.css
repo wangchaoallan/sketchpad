@@ -11,14 +11,11 @@
 	border: 1px solid black;
 	display: inline-block;
 	margin: 1px 1px;
-	background-color: grey;
+	background-color: white;
 	
 }
 
-.highlight{
-	background-color: blue;
 
-}
 
 #button{
 	width: 900px;
@@ -27,21 +24,15 @@
 
 button{
 
-	width: 129px;
+	width: 168px;
     height: 37px;
 	display: inline-block;
 	margin-bottom: 20px;
 	margin-top: 50px;
+	position: relative;
+	left: 170px;
 }
 
-#toClear{
-	position: relative;
-	left: 300px;
-}
-#newGrid{
-	position: relative;
-	left: 300px;
-}
 body{
 	background-image: url("backgroundImg.jpg");
 }
