@@ -108,41 +108,28 @@ function GridWithOpacity(){
 
 	$('.wrapper').find('div').on('mouseenter',function(){
 		
-		var currentOpacity = $(this).css('opacity');
-		currentOpacity=Number(currentOpacity);
+	
 		
-		
-		if($(this).css("background-color")==="rgb(255,255,255)"){
+		if($(this).hasClass('hasOpacity')){
 
-			$(this).css('background-color','rgb(0,0,0)');
-			$(this).css('opacity',0.1);
+			var currentOpacity=parseFloat($(this).css('opacity'));
+			var increase = 0.1;
 			
-
-		}
-
-		else{
 			currentOpacity+=0.1;
 			
+		
 			$(this).css('opacity',currentOpacity);
-			
 
-		}
-		/*$(this).css('background-color','black');
-		$(this).css('opacity',0.1);
-
-		var currentOpacity = $(this).css('opacity');
-
-
-		if(0<currentOpacity){
-
-			$(this).css('opacity',currentOpacity+0.1);
 		}
 
 		else{
 
+			$(this).addClass('hasOpacity');
+
+		}
+
 
 		
-	}*/
 	});
 
 }
